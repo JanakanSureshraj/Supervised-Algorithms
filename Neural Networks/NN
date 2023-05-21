@@ -1,7 +1,7 @@
 #Goal: Classify the type of wine out of 3 classes based on 13 attributes.
-#NN Architecture: 2 hidden layers. tanh activation. Nonlinear output. 
+#NN Architecture: 2 hidden layers. tanh activation. Non linear output. 
 
-wine<- read.csv("C:\\IIT Computer Science\\Year 2\\Sem 2 (Jan 2023)\\2 Machine Learning and Data Mining\\Learning Resources\\Week 8 Association Rules + NN Tutorial\\Tutorial 7- Neural Networks\\winedata.csv")
+wine<- read.csv("winedata.csv")
 head(wine)
 str(wine)
 
