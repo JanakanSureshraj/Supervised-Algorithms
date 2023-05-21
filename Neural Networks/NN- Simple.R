@@ -1,4 +1,4 @@
-#Goal: Predicting the square root of numbers. 
+#Goal: Calculating the square root of numbers. 
 #NN Architecture: 1 hidden layer. Sigmoid activation function. Linear Output. 
 library(neuralnet)
 
