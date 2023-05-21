@@ -1,0 +1,55 @@
+S= H + I + S + B
+
+Total number of instances (t)= h + i + s + b	
+Parent Entropy
+Entropy (S)= -h/t log2 h/t -i/t log 2 i/t -	s/t log2 s/t -b/t log2 b/2
+Entropy (S)= -1/7log2(1/7) -2/7log2(2/7) -2/7log2(2/7) -2/7log2(2/7)
+Entropy (S)= 1.95
+
+Calculating entropy of each attribute to identify the information gain to see which attribute is the most important-	
+the decision tree will be drawn starting with this attribute (root attribute). 
+
+Fever Attribute
+S1= no S2= average S3= high
+value    H I S B  Entropy
+S1       x     x  -1/2log2(1/2)-0-0-1/2log2(1/2)= 1.0
+S2         x x x  0-1/3log2(1/3)-1/3log2(1/3)-1/3log2(1/3)= 1.585
+S3         x x    0-1/2log2(1/2)-1/2log2(1/2)-0= 1.0
+Total Entropy for fever attribute=Entropy(S|fever)= S1/t * Entropy(S1) + S2/t * Entropy(S2) + S3/t * Entropy(S3)
+                                                  = 2/7  * 1           + 3/7  * 1.585       + 2/7  * 1.0
+                                                  = 1.2507
+
+Vomitting Attribute
+S1= no S2= yes
+value    H I S B  Entropy
+S1       x xx x   -1/4log2(1/4)-2/4log(2/4)-1/4log2(1/4)-0= 1.5
+S2            x x  0-0-1/2log2(1/2)-1/2log2(1/2)= 0.918
+Total Entropy for vomitting attribute= Entropy(S|Vomitting)= S1/t * Entropy(S1) + S2/t * Entropy(S2)
+                                     = 4/7  * 1.5       + 3/7  * 0.918
+                                     = 1.2505
+
+Diarrhea Attibute 
+S1= no S2= yes
+value    H I  S   B   Entropy
+S1       x xx         = -1/3log2(1/3)-2/3log2(2/3)-0-0= 0.918 
+S2            xx  xx  = 0-0-2/4log2(2/4)-2/4log2(2/4)=  1.0
+Total Entropy for diarrhea attribute=Entropy(S|Diarrhea)= S1/t * E(S1) + S2/t * E(S2)
+                                    = 3/7*0.918 + 4/7 * 1.0
+                                    = 0.965
+
+Shivering Attribute 
+S1= no S2= yes
+value    H I S  B    Entropy  
+S1       x x xx  xx = -1/6log2(1/6)-1/6log2(1/6)-2/6log2(2/6)-2/6log2(2/6)= 1.918
+S2         x        = 0-1/1log2(1/1)-0-0= 0
+Total Entropy for shivering attribute=Entropy(S|Shivering)= S1/t * E(S1) + S2/t * E(S2)
+                                     = 6/7  * 1.918 + 1/7 * 0
+                                     = 1.644
+
+Information Gain Calculation 
+Fever Attibute: Gain(S)= E(S) - E(S|Fever)= 1.95-1.2507= 0.693
+Vomitting Attibute: Gain(S)= E(S) - E(S|Vomitting)= 1.95- 0.2505= 0.6975
+Diarrhea Attibute: Gain(S)= E(S) - E(S|Diarrhea)= 1.95- 0.965= 0.9834
+Shivering Attribute: Gain(S)= E(S) - E(S|Shivering)= 1.95- 1.644= 0.304
+
+*The Diarrhea Attribute maximizes the information gain and so it will be chosen as the root node. 
