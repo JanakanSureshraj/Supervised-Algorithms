@@ -1,5 +1,5 @@
 #Goal: Predicting the strength of cement mix based on relevant features. 
-#NN Architecture: 2 hidden layers. relu activation function. Linear output (lin act.)- continous 
+#NN Architecture: 2 hidden layers. ReLU activation function. Linear output (lin act.)- continous 
 #                 output variable is directly proportional to the weighted 
 #                 sum of the inputs (no activation).  
 
@@ -14,7 +14,7 @@ library(neuralnet)
 
 
 #Loading the dataset
-concrete<- read.csv("C:\\IIT Computer Science\\Year 2\\Sem 2 (Jan 2023)\\2 Machine Learning and Data Mining\\Learning Resources\\Week 8 Association Rules + NN Tutorial\\Tutorial 7- Neural Networks\\concrete.csv")
+concrete<- read.csv("concrete.csv")
 str(concrete)
 summary(concrete)
 #summary of a specific variable
